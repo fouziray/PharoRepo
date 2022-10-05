@@ -11,8 +11,8 @@ Class {
 DieHandle >> + aDieHandler [
 	|result|
 	result:=DieHandle new.
-	result addAll: aDieHandler dice.
-	result addAll: self dice.
+	result dice addAll: aDieHandler dice.
+	result dice addAll: self dice.
 	^result .
 ]
 
