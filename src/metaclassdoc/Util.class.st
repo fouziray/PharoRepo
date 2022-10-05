@@ -11,23 +11,22 @@ Util >> getMetaData: classe [
 	nbVarInstance:=classe instVarNames size asString.
 	 
 	varInstance :=' and ' join: classe instVarNames.
-	
 	resultat := String streamContents: [ :stream |
 		stream 
 			nextPutAll: 'le nom de la classe:  ';
 			nextPutAll: '';
 			nextPutAll: classe className   ;
-			cr;
+			nextPut: Character cr;
 			
 			nextPutAll: 'Hérite de: ';
 			nextPutAll: classe superclass className ;
-			cr;
+			nextPut: Character cr;
 			
 			nextPutAll: 'it has ';
 			nextPutAll: nbVarInstance  ; 
 			nextPutAll: ' Variables : ';
 			nextPutAll: varInstance   ;
-			cr; 
+			nextPut: Character cr; 
 			
 			nextPutAll: 'It is defined in package: ';
 			nextPutAll:  classe package name ; 
@@ -35,7 +34,7 @@ Util >> getMetaData: classe [
 			
 			nextPutAll: 'It has the following methods : ';
 			nextPutAll: (', ' join: classe selectors );
-			cr
+			nextPut: Character cr
 			].
 	^ resultat.
 ]
